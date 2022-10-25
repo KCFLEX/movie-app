@@ -12,15 +12,15 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('')
 
-  const searchMovies = async (year) => {
-    const response = await fetch(`${API_URL}&s=${year}`);
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
 
     setMovies(data.Search);
   };
 
   useEffect(() => {
-    searchMovies("2020");
+    searchMovies("Thor");
   }, []);
 
   return (
